@@ -1,0 +1,199 @@
+/* Default styles for larger screens */
+
+/* Add styles to the header */
+#header {
+    height: 100vh;
+}
+
+.container {
+    padding: 10px 10%;
+}
+
+/* Navigation */
+nav ul li a {
+    font-size: 20px;
+}
+
+/* Header Content */
+.header-content {
+    margin-top: 20%;
+}
+
+/* About Section */
+.about-col-1 {
+    flex-basis: 30%;
+}
+
+.portfolio-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-left: 0;
+}
+
+.about-col-2 {
+    flex-basis: 70%;
+}
+
+.sub-title {
+    font-size: 40px;
+}
+
+.tab-links {
+    font-size: 16px;
+}
+
+/* Services Section */
+.services-list div {
+    padding: 20px;
+    font-size: 16px;
+}
+
+/* Contact Section */
+.contact-left p {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    font-size: 24px;
+}
+
+.btn.btn2 {
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+/* Copyright */
+.copyright {
+    padding: 15px 0;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Tablets and smaller screens */
+@media (max-width: 768px) {
+    #header {
+        height: auto;
+        padding: 60px 0;
+    }
+
+    .container {
+        padding: 10px 5%;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
+
+    .header-content {
+        margin-top: 10%;
+    }
+
+    .about-col-1 {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .portfolio-image {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .about-col-2 {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .sub-title {
+        font-size: 36px;
+    }
+
+    .tab-links {
+        font-size: 14px;
+    }
+
+    .services-list div {
+        padding: 20px;
+        font-size: 14px;
+    }
+
+    .contact-left p {
+        margin-top: 15px;
+    }
+
+    .social-icons a {
+        font-size: 20px;
+    }
+
+    .btn.btn2 {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    .copyright {
+        padding: 10px 0;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .header-content {
+        margin-top: 0;
+    }
+
+    .about-col-1 img {
+        max-width: 100%;
+        border-radius: 50%;
+    }
+
+    .about-col-2 p {
+        font-size: 14px;
+    }
+
+    .sub-title {
+        font-size: 28px;
+    }
+
+    .tab-links {
+        font-size: 12px;
+    }
+
+    .tab-contents ul li {
+        font-size: 12px;
+    }
+
+    .services-list div {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .contact-left p {
+        font-size: 14px;
+    }
+
+    .social-icons a {
+        font-size: 18px;
+    }
+
+    .btn.btn2 {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .copyright {
+        padding: 5px 0;
+    }
+}

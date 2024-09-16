@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta name="google-site-verification" content="QXq61sOnZGUP5nuhWSCk__9JBtbbBQ7AsjdFtyQbKaQ" />
+    <script src="https://kit.fontawesome.com/8dc066fc07.js" crossorigin="anonymous"></script>
+    <title>Feedback Form</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .logo {
+            max-width: 200px;
+            float: left;
+        }
+
+        .feedback-container {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        label {
+            display: inline-block;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .feedbackmain {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        /* Add box-sizing property to input and textarea elements */
+        form input,
+        form textarea {
+            width: 100%;
+            border: 0;
+            outline: none;
+            background: #262626;
+            padding: 15px;
+            margin: 15px 0;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 6px;
+            box-sizing: border-box; /* Ensure padding and border are included in the width */
+        }
+
+        .feedback {
+            display: flex;
+            align-items: center;
+        }
+
+        .feedsubmit {
+            display: inline-block;
+            background: #4CC417;
+            text-decoration: none;
+            color: aliceblue;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 500;
+            font-size: 15px;
+            border-radius: 12px;
+            padding: 8px;
+        }
+        .copyright{
+            width: 100%;
+            text-align: center;
+            padding: 25px 0;
+            background: #262626;
+            font-weight: 400;
+            margin-top: 20px;
+        
+        }
+    </style>
+</head>
+<body>
+    <div class="feedback-container">
+        <div class="logo">
+        <img src="images/portfolio.png"  class="logo-img" alt="Logo">
+        </div><br><br><br><br>
+        <h1 style="text-align: left; font-size: 50px">Feedback Form</h1>
+        <h4 style="text-align: left; font-size: 20px">I would love to hear your thoughts, suggestions, concerns, or problems with anything so I can improve.</h4>
+        <form name="submit-to-google-sheet"id="feedbackForm">
+           <!-- name -->
+            <h3 style="text-align: left">Name</h3>
+            <input type="text" id="name" name="Name" placeholder="Enter your name here" required>
+           <!-- email -->
+            <h3 style="text-align: left">Email</h3>
+            <input type="email" id="email" name="email" placeholder="Enter your email here" required>
+            <!-- feedback type -->
+            <p style="text-align: left"> <label for="feedbackType">Feedback Type:</label></p>
+            <div class="feedback" style="text-align: left">
+                <label>Comments <input type="radio" id="comments" name="feedbackType" value="comments"></label>
+                <label>Suggestions <input type="radio" id="suggestions" name="feedbackType" value="suggestions"></label>
+                <label>Questions <input type="radio" id="questions" name="feedbackType" value="questions"></label>
+            </div>
+            <!-- feedbackmessage -->
+            <h3 style="text-align:left">Describe your Feedback</h3>
+            <textarea name="Message" id="message" rows="6" placeholder="Your Message" required></textarea>
+            <button type="submit" class="download-cv">Submit Feedback</button>        
+        </form>
+    </div>
+    <div class="copyright">
+        <p>Copyright Aditya <i class="fa-solid fa-heart" style="color: #4CC417;"></i> MyPortfolio <i class="fa-sharp fa-regular fa-copyright"></i> 2022-2023</p>
+     </div>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwOAv5-p0RfNZl7jpiFqfilGrefQeN0oZAR17YvI6SoxKQUsvd4Urr_-chkk3DIEaq0/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Thanks for your feedback!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>

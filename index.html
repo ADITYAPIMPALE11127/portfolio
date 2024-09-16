@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="google-site-verification" content="QXq61sOnZGUP5nuhWSCk__9JBtbbBQ7AsjdFtyQbKaQ" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website - Aditya Pimpale</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/8dc066fc07.js" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style-responsive.css">
+    <link rel="icon" href="images/portfolio.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <div id="header">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="images/portfolio.png" alt="Logo" class="logo-img">
+                </div>
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li> <a href="#about">About</a></li>
+                    <li><a href="#projects">My Projects</li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a style="color:#fff; text-decoration: none; 
+                text-align-last: left; font-size: 20px;" href="feedback.html">Feedback</a></li>
+                    <li><a href="#contact"> <i class="fa-solid fa-phone ringing-icon"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- header text -->
+        <div class="header-content">
+            <div class="about-col-1">
+                <!-- Add content if needed -->
+            </div>
+            <div class="header-col-2">
+                <h1 id="typing-effect" style="font-size: xx-large;">Hello, I'm Aditya Pimpale,</h1>
+                <p style="font-size: xx-large;">A passionate computer
+                    <br>engineering graduate with a flair for<br> creating innovative web & software solutions.
+                </p>
+                <br>
+                <p class="web-dev-enthusiast">| Web Development Enthusiast |</p>
+            </div>
+        </div>
+
+
+
+        <!-- about -->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img class="user" src="images/user.jpg" alt="User Image">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title"><span>A</span>bout Me</h1><br>
+                        <p style="text-align:justify">
+                            I am a final-year Computer Engineering student at Savitribai Phule Pune University (SPPU),
+                            driven by a deep passion for technology and innovation. Throughout my academic journey, I
+                            have
+                            delved into diverse aspects of programming, web development, and software engineering. I
+                            actively seek opportunities for growth, taking on internships and real-world projects in Big
+                            Data, web development, and technical writing. My relentless drive and technical expertise
+                            equip
+                            me to make a significant impact in the field of computer engineering.
+                        </p>
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+
+                        </div>
+                        <div class="tab-contents active-tab" style="background-color:#000" id="skills">
+                            <h2 style="color:#ffffff">Skills</h2>
+                            
+                            <!-- Languages Section -->
+                            <div class="skills-section">
+                                <strong>Languages:</strong>
+                                <div class="skills-container">
+                                    <div class="skill-item">
+                                        <i class="fab fa-java" style="color:#f89820"></i>
+                                        <span>Core Java (Basic)</span>
+                                    </div>
+                                    <div class="skill-item">
+                                        <i class="fab fa-js" style="color:#f7e02a"></i>
+                                        <span>JavaScript (Basic)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Frameworks & Libraries Section -->
+                            <div class="skills-section">
+                                <strong>Frameworks & Libraries:</strong>
+                                <div class="skills-container">
+                                    <div class="skill-item">
+                                        <i class="fab fa-react" style="color:#61DBFB"></i>
+                                        <span>React</span>
+                                    </div>
+                                    <div class="skill-item">
+                                        <i class="fab fa-react" style="color:#61DBFB"></i>
+                                        <span>React Native</span>
+                                    </div>
+                                    <div class="skill-item">
+                                        <i class="fab fa-python" style="color:#306998"></i>
+                                        <span>Flask</span>
+                                    </div>
+                                    <div class="skill-item">
+                                        <i class="fa-solid fa-globe" style="color:#50d3bb"></i>
+                                        <span>Axios</span>
+                                    </div>
+                                    <div class="skill-item">
+                                        <i class="fab fa-react" style="color:#61DBFB"></i>
+                                        <span>React Native Paper</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Miscellaneous Section -->
+                            <div class="skills-section">
+                                <strong>Miscellaneous:</strong>
+                                <div class="skills-container">
+                                    <div class="skill-item">
+                                        <i class="fab fa-git" style="color:#F1502F"></i>
+                                        <span>Git</span>
+                                    </div>
+                                    <div class="skill-item">
+                                        <i class="fab fa-github" style="color:#31ef14"></i>
+                                        <span>GitHub</span>
+                                    </div>
+                                    <div class="skill-item">
+                                        <i class="fas fa-file-alt" style="color:#fd5353"></i>
+                                        <span>MS Office</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li>Frontend Developer Intern<br><span>Anveshak Technologies [August 2024]</span></li>
+                                <li>React Native Developer<br><span>BlueCollarLog [Feb 2024 - May 2024]</span></li>
+                                <li>Big Data Intern<br><span>Cyber Secured India [Feb 2023 - Mar 2023]</span></li>
+                                <li>Project Intern<br><span>Awadh [Jun 2022 - Aug 2022]</span></li>
+                                <li>Web Developer<br><span>Teachnook [Apr 2022 - May 2022]</span></li>
+                                <li>Content Writer<br><span>Aashman Foundation, Punjab [Feb 2022 - Apr 2022]</span></li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li>COMPUTER ENGINEERING<br><span>Savitribai Phule Pune University</span></li>
+                                <li>12th SCIENCE (HSC)<br><span>S.B.Patil College of Science and Commerce, Ravet</span>
+                                </li>
+                                <li>10th GRADE (SSC)<br><span>St. Ursula High School, Akurdi-35</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- projects -->
+         <div id="projects">
+        <div class="project">
+            <h1 class="project-title"><span>My </span>Projects</h1><br>
+            <div id="card-container" class="card-container"></div>
+        </div>
+    </div>
+        <!-- services -->
+        <div id="services">
+            <div class="container">
+                <h1 class="sub-title"><span>My Services</h1>
+                <div class="services-list">
+                    <div>
+                        <i class="fa-solid fa-wand-sparkles"></i>
+                        <h2>Web Designing</h2>
+                        <p>Designing templates</p><br><br>
+                        <a href="#contact">Learn more</a>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-hands-holding-circle"></i>
+                        <h2>Website Hosting</h2>
+                        <p>Hosting websites thorugh Github pages and cloud hosting
+                        </p>
+                        <a href="#contact">Learn more</a>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-file-word"></i>
+                        <h2>Technical Writing</h2>
+                        <p>Documentation for projects, writing Technical articles, blogs </p>
+                        <a href="#contact">Learn more</a>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <h2>Providing Projects</h2>
+                        <p>Providing Web Development & programming projects</p>
+                        <a href="#contact">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br><br><br>
+
+        <!-- Contact -->
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">Contact Me</h1>
+                        <p><i class="fa-sharp fa-solid fa-paper-plane fa-lg" style="color: #4CC417;"></i>
+                            pimpaleaditya2@gmail.com</p>
+                        <p><i class="fa-solid fa-phone fa-lg" style="color: #4CC417;"></i> 9607566258</p><br><br>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/profile.php?id=100025292475880"><i
+                                    class="fa-brands fa-facebook fa-lg"></i></a>
+                            <a href="https://www.linkedin.com/in/aditya-pimpale-40a09b214"><i
+                                    class="fa-brands fa-linkedin fa-lg"></i></a>
+                            <a href="https://twitter.com/AdityaPimpale8"><i class="fa-brands fa-twitter fa-lg"></i></a>
+                            <a href="https://github.com/ADITYAPIMPALE11127"><i
+                                    class="fa-brands fa-github fa-lg"></i></a>
+                        </div><br><br>
+                        <a href="images/my-cv.pdf" download class="download-cv">Download CV</a>
+                    </div>
+                    <div class="contact-right">
+                        <form method="post"
+                            action="https://script.google.com/macros/s/AKfycby4ZGAQIH_At6R-84tXLZn623Hg9WV2NXLMcoUIt5N7sgd9c0jI1NHR8_vl81au1CNMzQ/exec"
+                            id="contactForm">
+                            <input type="text" id="name" name="Name" placeholder="Your Name" required>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            <textarea name="Message" id="message" rows="6" placeholder="Your Message"></textarea>
+                            <button type="submit" class="download-cv">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright Aditya <span> <i class="fa-solid fa-heart" style="color: #4CC417;"> </i> MyPortfolio <i
+                            class="fa-sharp fa-regular fa-copyright"></span> </i> 2023-2024</p>
+            </div>
+        </div>
+
+        <script type="module">
+            import projectData from './data.js';
+
+            function createCard(project) {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                <img src="${project.image}" alt="${project.title}">
+                <div class="card-title">${project.title}</div>
+                <div class="card-description">${project.description}</div>
+                <div class="card-buttons">
+                    ${project.link ? `<a href="${project.link}" class="card-link" target="_blank">View Live</a>` : ''}
+                    ${project.github ? `<a href="${project.github}" class="card-github" target="_blank"><i class="fa-brands fa-github fa-lg"></i></a>` : ''}
+                </div>
+            `;
+                return card;
+            }
+
+            function renderCards(data) {
+                const container = document.getElementById('card-container');
+                data.forEach(project => {
+                    const card = createCard(project);
+                    container.appendChild(card);
+                });
+            }
+
+            renderCards(projectData);
+        </script>
+        <script>
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+
+            function opentab(tabname) {
+                // Remove active-link class from all tab links
+                for (let tablink of tablinks) {
+                    tablink.classList.remove("active-link");
+                }
+
+                // Remove active-tab class from all tab contents
+                for (let tabcontent of tabcontents) {
+                    tabcontent.classList.remove("active-tab");
+                }
+
+                // Add active-link class to the clicked tab link
+                event.currentTarget.classList.add("active-link");
+
+                // Add active-tab class to the corresponding tab content
+                document.getElementById(tabname).classList.add("active-tab");
+            }
+            function typeEffect(element, speed) {
+                const text = element.innerHTML;
+                element.innerHTML = '';
+                let i = 0;
+
+                function type() {
+                    if (i < text.length) {
+                        element.innerHTML += text.charAt(i);
+                        i++;
+                        setTimeout(type, speed);
+                    } else {
+                        setTimeout(() => {
+                            element.innerHTML = '';
+                            i = 0;
+                            type();
+                        }, 2000); // Adjust delay before restarting
+                    }
+                }
+
+                type();
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                typeEffect(document.getElementById('typing-effect'), 100); // Speed in ms
+            });
+        </script>
+
+</body>
+
+</html>
