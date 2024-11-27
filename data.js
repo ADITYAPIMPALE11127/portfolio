@@ -9,6 +9,14 @@ const projectData = [
     },
     {
         id: 2,
+        title:"Expense Tracker App",
+        description:"Efficiently helps track expenses with Friendly UI.",
+        image:"images/P10.jpeg",
+        link: "https://expense-tracking-app-liart.vercel.app/",
+        github: "https://github.com/ADITYAPIMPALE11127/expense-tracker"
+    },
+    {
+        id: 10,
         title: "Bulk SMS & Email Service",
         description: "A web service for efficient bulk SMS and email delivery.",
         image: "images/P3.jpg",
@@ -65,6 +73,7 @@ const projectData = [
         image: "images/P4.jpg",
         github: "https://github.com/ADITYAPIMPALE11127/livefacerecog"
     },
+
 ];
 
 export default projectData;
