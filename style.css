@@ -19,7 +19,53 @@ body {
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
-
+/* From Uiverse.io by nima-mollazadeh */
+.button {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987);
+    padding: 14px 25px;
+    border-radius: 10px;
+    font-size: 1.25em;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+  }
+  
+  .button span {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .button::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: #272727;
+    border-radius: 9px;
+    transition: 0.5s;
+  }
+  
+  .button:hover::before {
+    opacity: 0.7;
+  }
+  
+  .button::after {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    background: linear-gradient(45deg, #0ce39a, #69007f, #fc0987);
+    border-radius: 9px;
+    transition: 0.5s;
+    opacity: 0;
+    filter: blur(20px);
+  }
+  
+  .button:hover::after {
+    opacity: 1;
+  }
+  
 .glow-text {
     font-size: 18px;
     font-weight: bold;
@@ -38,11 +84,25 @@ body {
     background-position: center;
     
 }
+.web-dev-container {
+    display: flex;
+    align-items: center; /* Aligns items in the center vertically */
+    gap: 20px; /* Adds spacing between text and button */
+}
+
+.web-dev-enthusiast {
+    font-size: 1.25em;
+    font-weight: bold;
+    white-space: nowrap; /* Prevents text from breaking into a new line */
+}
 
 .container {
     padding: 10px 10%;
 }
-
+.about-container{
+    padding: 10px 10%;
+    margin-top:100px;
+}
 /* Navbar Container */
 /* Navbar Container */
 nav {
