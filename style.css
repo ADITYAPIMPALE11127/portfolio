@@ -75,6 +75,15 @@ body {
     -webkit-text-fill-color: transparent;
     animation: glowingText 3s linear infinite;
 }
+.glow-text-2 {
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #e9e926, #ff0055, #6559e2);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glowingText 3s linear infinite;
+}
 
 #header {
     width: 100%;
