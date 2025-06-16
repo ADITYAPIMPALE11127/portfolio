@@ -57,36 +57,19 @@ const About = () => {
   return (
     <section id="about" className="py-20 bg-gradient-to-b from-black to-darker">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
-          {/* Image Section */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="lg:w-1/3"
-          >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-2xl blur-xl opacity-30"></div>
-              <img
-                src="/images/user.jpg"
-                alt="Aditya Pimpale"
-                className="relative w-full max-w-md mx-auto rounded-2xl shadow-2xl border-2 border-primary/30"
-              />
-            </div>
-          </motion.div>
-
+        <div className="flex flex-col items-center">
           {/* Content Section */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="lg:w-2/3"
+            className="w-full max-w-6xl"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center">
               <span className="text-primary">A</span>bout Me
             </h2>
             
-            <p className="text-lg leading-relaxed mb-8 text-gray-300">
+            <p className="text-lg leading-relaxed mb-8 text-gray-300 text-center max-w-4xl mx-auto">
               I am a Computer Engineering graduate from Savitribai Phule Pune University (SPPU), 
               driven by a deep passion for technology and innovation. Throughout my academic journey, 
               I explored various aspects of programming, web development, and software engineering. 
@@ -96,7 +79,7 @@ const About = () => {
             </p>
 
             {/* Tabs */}
-            <div className="flex flex-wrap gap-4 mb-8">
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}

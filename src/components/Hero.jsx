@@ -1,66 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
-  const [displayText, setDisplayText] = useState('');
-  const fullText = "Hello, I'm Aditya Pimpale,";
-  
-  useEffect(() => {
-    let index = 0;
-    const timer = setInterval(() => {
-      if (index < fullText.length) {
-        setDisplayText(fullText.slice(0, index + 1));
-        index++;
-      } else {
-        clearInterval(timer);
-        setTimeout(() => {
-          setDisplayText('');
-          index = 0;
-          const restartTimer = setInterval(() => {
-            if (index < fullText.length) {
-              setDisplayText(fullText.slice(0, index + 1));
-              index++;
-            } else {
-              clearInterval(restartTimer);
-            }
-          }, 100);
-        }, 2000);
-      }
-    }, 100);
-
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/images/header.jpg)' }}
-      >
-        <div className="absolute inset-0 bg-black/60"></div>
-      </div>
-
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between">
+        <div className="flex flex-col items-center justify-center text-center">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="lg:w-1/2 text-center lg:text-left"
+            className="max-w-4xl"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-times">
-              <span className="text-orange-400 drop-shadow-lg">
-                {displayText}
-                <span className="animate-pulse">|</span>
-              </span>
-            </h1>
+            <motion.h1
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent"
+            >
+              Aditya Pimpale
+            </motion.h1>
             
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="text-xl md:text-2xl mb-8 leading-relaxed"
+              className="text-xl md:text-2xl mb-8 leading-relaxed text-gray-300"
             >
               A passionate computer engineering graduate with a flair for
               <br />creating innovative web & software solutions.
@@ -70,7 +35,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.8 }}
-              className="flex flex-col sm:flex-row items-center gap-6"
+              className="flex flex-col sm:flex-row items-center justify-center gap-6"
             >
               <p className="text-secondary text-xl font-semibold">
                 | Web Development Enthusiast |
@@ -87,22 +52,6 @@ const Hero = () => {
                 <span>Hire Me</span>
               </motion.a>
             </motion.div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="lg:w-1/2 mt-12 lg:mt-0 flex justify-center"
-          >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full blur-xl opacity-30 animate-pulse"></div>
-              <img
-                src="/images/user.jpg"
-                alt="Aditya Pimpale"
-                className="relative w-80 h-80 rounded-full object-cover border-4 border-primary shadow-2xl"
-              />
-            </div>
           </motion.div>
         </div>
       </div>
