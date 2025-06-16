@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaPhone, FaBars, FaTimes } from 'react-icons/fa';
-
+import portfolioImg from '../../images/portfolio.png';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -39,11 +39,11 @@ const Navbar = () => {
             whileHover={{ scale: 1.1 }}
             className="flex items-center"
           >
-            <img
-              src="/images/portfolio.png"
-              alt="Logo"
-              className="w-12 h-12 rounded-full animate-pulse-glow"
-            />
+<img
+  src={portfolioImg}
+  alt="Logo"
+  className="w-12 h-12 rounded-full animate-pulse-glow"
+/>
           </motion.div>
 
           {/* Desktop Navigation */}
