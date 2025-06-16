@@ -20,7 +20,7 @@ const Footer = () => {
             >
               <FaHeart className="text-secondary" />
             </motion.span>
-            MyPortfolio © 2023-2024
+            MyPortfolio © 2023-2025
           </p>
           
           <motion.div

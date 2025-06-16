@@ -55,8 +55,8 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-black to-darker">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-10 md:py-20 bg-gradient-to-b from-black to-darker">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="flex flex-col items-center">
           {/* Content Section */}
           <motion.div
@@ -65,11 +65,11 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="w-full max-w-6xl"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 md:mb-8 text-center">
               <span className="text-primary">A</span>bout Me
             </h2>
             
-            <p className="text-lg leading-relaxed mb-8 text-gray-300 text-center max-w-4xl mx-auto">
+            <p className="text-base sm:text-lg leading-relaxed mb-6 md:mb-8 text-gray-300 text-center max-w-4xl mx-auto px-2">
               I am a Computer Engineering graduate from Savitribai Phule Pune University (SPPU), 
               driven by a deep passion for technology and innovation. Throughout my academic journey, 
               I explored various aspects of programming, web development, and software engineering. 
@@ -78,21 +78,23 @@ const About = () => {
               expertise equip me to make a significant impact in the field of computer engineering.
             </p>
 
-            {/* Tabs */}
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              {tabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                    activeTab === tab.id
-                      ? 'bg-primary text-white shadow-lg'
-                      : 'bg-dark text-gray-300 hover:bg-primary/20'
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
+            {/* Tabs - Now scrollable on mobile */}
+            <div className="flex overflow-x-auto pb-2 mb-6 md:mb-8 hide-scrollbar">
+              <div className="flex space-x-2 px-1">
+                {tabs.map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold transition-all duration-300 whitespace-nowrap ${
+                      activeTab === tab.id
+                        ? 'bg-primary text-white shadow-lg'
+                        : 'bg-dark text-gray-300 hover:bg-primary/20'
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
             </div>
 
             {/* Tab Content */}
@@ -101,25 +103,25 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="bg-dark/50 rounded-xl p-6 backdrop-blur-sm"
+              className="bg-dark/50 rounded-xl p-4 sm:p-6 backdrop-blur-sm"
             >
               {activeTab === 'skills' && (
-                <div className="space-y-8">
+                <div className="space-y-6">
                   {skills.map((category, index) => (
                     <div key={index}>
-                      <h3 className="text-xl font-bold text-secondary mb-4">{category.category}:</h3>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <h3 className="text-lg sm:text-xl font-bold text-secondary mb-3 sm:mb-4">{category.category}:</h3>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                         {category.items.map((skill, skillIndex) => (
                           <motion.div
                             key={skillIndex}
-                            whileHover={{ scale: 1.05 }}
+                            whileHover={{ scale: 1.03 }}
                             className="flex items-center gap-3 p-3 bg-black/30 rounded-lg"
                           >
                             <skill.icon 
-                              className="text-2xl animate-bounce-slow" 
+                              className="text-xl sm:text-2xl animate-bounce-slow" 
                               style={{ color: skill.color }} 
                             />
-                            <span className="text-white">{skill.name}</span>
+                            <span className="text-white text-sm sm:text-base">{skill.name}</span>
                           </motion.div>
                         ))}
                       </div>
@@ -129,35 +131,35 @@ const About = () => {
               )}
 
               {activeTab === 'experience' && (
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {experience.map((exp, index) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className="p-4 bg-black/30 rounded-lg hover:bg-black/50 transition-colors duration-300"
+                      className="p-3 sm:p-4 bg-black/30 rounded-lg hover:bg-black/50 transition-colors duration-300"
                     >
-                      <h4 className="font-semibold text-white">{exp.role}</h4>
-                      <p className="text-primary">{exp.company}</p>
-                      <p className="text-secondary text-sm">{exp.period}</p>
+                      <h4 className="font-semibold text-white text-sm sm:text-base">{exp.role}</h4>
+                      <p className="text-primary text-xs sm:text-sm">{exp.company}</p>
+                      <p className="text-secondary text-xs">{exp.period}</p>
                     </motion.div>
                   ))}
                 </div>
               )}
 
               {activeTab === 'education' && (
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {education.map((edu, index) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className="p-4 bg-black/30 rounded-lg hover:bg-black/50 transition-colors duration-300"
+                      className="p-3 sm:p-4 bg-black/30 rounded-lg hover:bg-black/50 transition-colors duration-300"
                     >
-                      <h4 className="font-semibold text-white">{edu.degree}</h4>
-                      <p className="text-gray-300">{edu.institution}</p>
+                      <h4 className="font-semibold text-white text-sm sm:text-base">{edu.degree}</h4>
+                      <p className="text-gray-300 text-xs sm:text-sm">{edu.institution}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -166,6 +168,17 @@ const About = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Add this to your global CSS */}
+      <style jsx>{`
+        .hide-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </section>
   );
 };
