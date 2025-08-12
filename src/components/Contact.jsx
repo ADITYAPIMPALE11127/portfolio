@@ -24,23 +24,37 @@ const Contact = () => {
     setSubmitStatus(null);
     
     try {
+      // Create form data with exact field names that match your Google Sheet headers
       const formPayload = new FormData();
-      formPayload.append('Name', formData.name);
-      formPayload.append('Email', formData.email);
-      formPayload.append('Message', formData.message);
+      formPayload.append('name', formData.name);
+      formPayload.append('email', formData.email);
+      formPayload.append('message', formData.message);
+      formPayload.append('timestamp', new Date().toISOString());
 
+      // Make sure this URL is your actual Google Apps Script web app URL
       const response = await fetch('https://script.google.com/macros/s/AKfycby4ZGAQIH_At6R-84tXLZn623Hg9WV2NXLMcoUIt5N7sgd9c0jI1NHR8_vl81au1CNMzQ/exec', {
         method: 'POST',
         body: formPayload,
-        mode: 'no-cors' // Important for Google Apps Script
+        mode: 'no-cors'
       });
       
-      // With no-cors mode, we can't read the response, so we assume it worked
+      // Since we're using no-cors mode, we assume success if no error is thrown
       setSubmitStatus('success');
       setFormData({ name: '', email: '', message: '' });
+      
+      // Optional: Add a small delay to show the success message
+      setTimeout(() => {
+        setSubmitStatus(null);
+      }, 5000);
+      
     } catch (error) {
       console.error('Error submitting form:', error);
       setSubmitStatus('error');
+      
+      // Clear error message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus(null);
+      }, 5000);
     } finally {
       setIsSubmitting(false);
     }
