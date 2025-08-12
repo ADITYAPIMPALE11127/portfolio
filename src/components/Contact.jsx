@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaPaperPlane, FaPhone, FaFacebook, FaLinkedin, FaTwitter, FaGithub, FaDownload } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -24,43 +25,32 @@ const Contact = () => {
     setSubmitStatus(null);
     
     try {
-      // Create form data with exact field names that match your Google Sheet headers
-      const formPayload = new FormData();
-      formPayload.append('name', formData.name || '');
-      formPayload.append('email', formData.email || '');
-      formPayload.append('message', formData.message || '');
-      
-      // Debug: Log the form data
-      console.log('Form data being sent:', {
-        name: formData.name,
-        email: formData.email,
-        message: formData.message
-      });
+      // EmailJS configuration
+      const serviceID = 'YOUR_SERVICE_ID'; // You'll need to replace this
+      const templateID = 'YOUR_TEMPLATE_ID'; // You'll need to replace this
+      const publicKey = 'YOUR_PUBLIC_KEY'; // You'll need to replace this
 
-      // Make sure this URL is your actual Google Apps Script web app URL
-      const response = await fetch('https://script.google.com/macros/s/AKfycby4ZGAQIH_At6R-84tXLZn623Hg9WV2NXLMcoUIt5N7sgd9c0jI1NHR8_vl81au1CNMzQ/exec', {
-        method: 'POST',
-        body: formPayload,
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        }
-      });
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        to_email: 'adityaa12144@gmail.com',
+        message: formData.message,
+        reply_to: formData.email
+      };
+
+      await emailjs.send(serviceID, templateID, templateParams, publicKey);
       
-      // Since we're using no-cors mode, we assume success if no error is thrown
       setSubmitStatus('success');
       setFormData({ name: '', email: '', message: '' });
       
-      // Optional: Add a small delay to show the success message
       setTimeout(() => {
         setSubmitStatus(null);
       }, 5000);
       
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error('Error sending email:', error);
       setSubmitStatus('error');
       
-      // Clear error message after 5 seconds
       setTimeout(() => {
         setSubmitStatus(null);
       }, 5000);
@@ -112,8 +102,8 @@ const Contact = () => {
                   <FaPaperPlane className="text-xl md:text-2xl text-secondary" />
                   <div>
                     <p className="text-gray-300 text-sm md:text-base">Email</p>
-                    <a href="mailto:pimpaleaditya2@gmail.com" className="text-white hover:text-primary transition-colors text-sm md:text-base">
-                      pimpaleaditya2@gmail.com
+                    <a href="mailto:adityaa12144@gmail.com" className="text-white hover:text-primary transition-colors text-sm md:text-base">
+                      adityaa12144@gmail.com
                     </a>
                   </div>
                 </motion.div>
@@ -190,7 +180,7 @@ const Contact = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="mb-4 md:mb-6 p-3 md:p-4 bg-red-500/20 border border-red-500 rounded-lg text-red-300 text-sm md:text-base"
               >
-                Sorry, there was an error sending your message. Please try again.
+                Sorry, there was an error sending your message. Please try again or email me directly.
               </motion.div>
             )}
 
@@ -249,8 +239,21 @@ const Contact = () => {
                 ) : (
                   'Send Message'
                 )}
-              </motion.button>
+              </button>
             </form>
+
+            {/* Alternative Contact Info */}
+            <div className="mt-6 p-4 bg-dark/30 rounded-lg border border-primary/10">
+              <p className="text-sm text-gray-400 text-center">
+                Having trouble with the form? Email me directly at{' '}
+                <a 
+                  href="mailto:adityaa12144@gmail.com" 
+                  className="text-primary hover:text-accent transition-colors"
+                >
+                  adityaa12144@gmail.com
+                </a>
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>
