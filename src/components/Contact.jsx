@@ -25,10 +25,9 @@ const Contact = () => {
     setSubmitStatus(null);
     
     try {
-      // EmailJS configuration
-      const serviceID = 'YOUR_SERVICE_ID'; // You'll need to replace this
-      const templateID = 'YOUR_TEMPLATE_ID'; // You'll need to replace this
-      const publicKey = 'YOUR_PUBLIC_KEY'; // You'll need to replace this
+      const serviceID = 'YOUR_SERVICE_ID';
+      const templateID = 'YOUR_TEMPLATE_ID';
+      const publicKey = 'YOUR_PUBLIC_KEY';
 
       const templateParams = {
         from_name: formData.name,
@@ -239,7 +238,7 @@ const Contact = () => {
                 ) : (
                   'Send Message'
                 )}
-              </button>
+              </motion.button>
             </form>
 
             {/* Alternative Contact Info */}
