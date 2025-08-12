@@ -26,16 +26,25 @@ const Contact = () => {
     try {
       // Create form data with exact field names that match your Google Sheet headers
       const formPayload = new FormData();
-      formPayload.append('name', formData.name);
-      formPayload.append('email', formData.email);
-      formPayload.append('message', formData.message);
-      formPayload.append('timestamp', new Date().toISOString());
+      formPayload.append('name', formData.name || '');
+      formPayload.append('email', formData.email || '');
+      formPayload.append('message', formData.message || '');
+      
+      // Debug: Log the form data
+      console.log('Form data being sent:', {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message
+      });
 
       // Make sure this URL is your actual Google Apps Script web app URL
       const response = await fetch('https://script.google.com/macros/s/AKfycby4ZGAQIH_At6R-84tXLZn623Hg9WV2NXLMcoUIt5N7sgd9c0jI1NHR8_vl81au1CNMzQ/exec', {
         method: 'POST',
         body: formPayload,
-        mode: 'no-cors'
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
       });
       
       // Since we're using no-cors mode, we assume success if no error is thrown
