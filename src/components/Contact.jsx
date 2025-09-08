@@ -144,16 +144,19 @@ const Contact = () => {
             </div>
 
             {/* Download CV */}
-            <motion.a
-              href="/images/my-cv.pdf"
-              download
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 md:gap-3 px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-secondary to-primary text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-sm md:text-base"
-            >
-              <FaDownload className="text-sm md:text-base" />
-              Download CV
-            </motion.a>
+        {/* Download CV */}
+<motion.a
+  href="https://aditya-pimpale-resume.tiiny.site"
+  target="_blank"
+  rel="noopener noreferrer"
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  className="inline-flex items-center gap-2 md:gap-3 px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-secondary to-primary text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-sm md:text-base"
+>
+  <FaDownload className="text-sm md:text-base" />
+  Download CV
+</motion.a>
+
           </motion.div>
 
           {/* Contact Form */}
