@@ -26,15 +26,17 @@ const Navbar = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isMobileMenuOpen]);
 
-  const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Dev Shop', href: 'https://dev-e-commerce.vercel.app/', external: true, className: 'gradient-text' },
-    { name: 'Linktree', href: 'https://linktr.ee/AdityaPimpale411', external: true, className: 'gradient-text-2' },
-    { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Services', href: '#services' },
-    { name: 'Feedback', href: '#contact' },
-  ];
+const navItems = [
+  { name: 'Home', href: '#home' },
+  { name: 'Dev Shop', href: 'https://dev-e-commerce.vercel.app/', external: true, className: 'gradient-text' },
+  { name: 'Linktree', href: 'https://linktr.ee/AdityaPimpale411', external: true, className: 'gradient-text-2' },
+  { name: 'About', href: '#about' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Services', href: '#services' },
+  { name: 'Resume', href: 'https://aditya-pimpale-resume.tiiny.site', external: true, className: 'gradient-text' }, // ✅ Added Resume link
+  { name: 'Feedback', href: '#contact' },
+];
+
 
   return (
     <motion.nav
