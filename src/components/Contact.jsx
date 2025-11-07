@@ -1,12 +1,22 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaPaperPlane, FaPhone, FaFacebook, FaLinkedin, FaTwitter, FaGithub, FaDownload } from 'react-icons/fa';
+import { 
+  FaPaperPlane, 
+  FaPhone, 
+  FaFacebook, 
+  FaLinkedin, 
+  FaTwitter, 
+  FaGithub, 
+  FaDownload,
+  FaEnvelope 
+} from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    subject: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -26,33 +36,29 @@ const Contact = () => {
 
     try {
       const serviceID = 'service_67bf6uh';
-      const templateID = 'template_br66n7k';
+      const templateID = 'template_br66n7k';  // Make sure this template has {{subject}} in EmailJS
       const publicKey = 'OKLZJTOP15-Ers8zN';
 
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
-        to_email: 'adityaa12144@gmail.com',
+        reply_to: formData.email,
+        subject: formData.subject || '(No subject)',  // Fallback if empty
         message: formData.message,
-        reply_to: formData.email
+        to_email: 'adityaa12144@gmail.com'
       };
 
       await emailjs.send(serviceID, templateID, templateParams, publicKey);
 
       setSubmitStatus('success');
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', email: '', subject: '', message: '' });
 
-      setTimeout(() => {
-        setSubmitStatus(null);
-      }, 5000);
+      setTimeout(() => setSubmitStatus(null), 6000);
 
     } catch (error) {
-      console.error('Error sending email:', error);
+      console.error('EmailJS Error:', error);
       setSubmitStatus('error');
-
-      setTimeout(() => {
-        setSubmitStatus(null);
-      }, 5000);
+      setTimeout(() => setSubmitStatus(null), 6000);
     } finally {
       setIsSubmitting(false);
     }
@@ -66,56 +72,63 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-12 md:py-20 bg-gradient-to-b from-darker to-black">
+    <section id="contact" className="py-16 md:py-24 bg-gradient-to-b from-darker via-black to-black">
       <div className="container mx-auto px-4 sm:px-6">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-10 md:mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4">
-            Contact <span className="text-primary">Me</span>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
+            Let's <span className="text-primary">Connect</span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
-            Let's discuss your next project or just say hello!
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+            Have a project in mind? Drop me a message — I reply within 24 hours!
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-          {/* Contact Information */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16">
+          {/* Left: Info */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="space-y-6 md:space-y-8 order-2 lg:order-1"
+            className="space-y-8 order-2 lg:order-1"
           >
             <div>
-              <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-white">Get In Touch</h3>
+              <h3 className="text-2xl md:text-3xl font-bold mb-6 text-white">Get In Touch</h3>
               
-              <div className="space-y-3 md:space-y-4">
+              <div className="space-y-5">
                 <motion.div
-                  whileHover={{ x: 10 }}
-                  className="flex items-center gap-3 md:gap-4 p-3 md:p-4 bg-dark/50 rounded-lg backdrop-blur-sm"
+                  whileHover={{ x: 12 }}
+                  className="flex items-center gap-4 p-5 bg-dark/60 rounded-2xl backdrop-blur-md border border-primary/20"
                 >
-                  <FaPaperPlane className="text-xl md:text-2xl text-secondary" />
+                  <div className="p-3 bg-primary/10 rounded-xl">
+                    <FaEnvelope className="text-2xl text-primary" />
+                  </div>
                   <div>
-                    <p className="text-gray-300 text-sm md:text-base">Email</p>
-                    <a href="mailto:adityaa12144@gmail.com" className="text-white hover:text-primary transition-colors text-sm md:text-base">
+                    <p className="text-gray-400 text-sm">Email</p>
+                    <a href="mailto:adityaa12144@gmail.com" className="text-white font-medium hover:text-primary transition-colors">
                       adityaa12144@gmail.com
                     </a>
                   </div>
                 </motion.div>
 
                 <motion.div
-                  whileHover={{ x: 10 }}
-                  className="flex items-center gap-3 md:gap-4 p-3 md:p-4 bg-dark/50 rounded-lg backdrop-blur-sm"
+                  whileHover={{ x: 12 }}
+                  className="flex items-center gap-4 p-5 bg-dark/60 rounded-2xl backdrop-blur-md border border-primary/20"
                 >
-                  <FaPhone className="text-xl md:text-2xl text-secondary" />
+                  <div className="p-3 bg-accent/10 rounded-xl">
+                    <FaPhone className="text-2xl text-accent" />
+                  </div>
                   <div>
-                    <p className="text-gray-300 text-sm md:text-base">Phone</p>
-                    <a href="tel:9607566258" className="text-white hover:text-primary transition-colors text-sm md:text-base">
-                      +91 9607566258
+                    <p className="text-gray-400 text-sm">Phone</p>
+                    <a href="tel:+919607566258" className="text-white font-medium hover:text-accent transition-colors">
+                      +91 96075 66258
                     </a>
                   </div>
                 </motion.div>
@@ -124,17 +137,17 @@ const Contact = () => {
 
             {/* Social Links */}
             <div>
-              <h4 className="text-lg md:text-xl font-semibold mb-3 md:mb-4 text-white">Follow Me</h4>
-              <div className="flex gap-3 md:gap-4">
+              <h4 className="text-xl font-semibold mb-5 text-white">Follow Me</h4>
+              <div className="flex gap-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={index}
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.2, y: -5 }}
+                    whileHover={{ scale: 1.2, y: -8 }}
                     whileTap={{ scale: 0.9 }}
-                    className="w-10 h-10 md:w-12 md:h-12 bg-dark/50 rounded-full flex items-center justify-center text-lg md:text-xl hover:bg-primary/20 transition-colors duration-300"
+                    className="w-12 h-12 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl flex items-center justify-center text-2xl backdrop-blur-md border border-white/10 hover:border-primary/50 transition-all duration-300"
                     style={{ color: social.color }}
                   >
                     <social.icon />
@@ -144,118 +157,120 @@ const Contact = () => {
             </div>
 
             {/* Download CV */}
-        {/* Download CV */}
-<motion.a
-  href="https://aditya-pimpale-resume.tiiny.site"
-  target="_blank"
-  rel="noopener noreferrer"
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.95 }}
-  className="inline-flex items-center gap-2 md:gap-3 px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-secondary to-primary text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-sm md:text-base"
->
-  <FaDownload className="text-sm md:text-base" />
-  Download CV
-</motion.a>
-
+            <motion.a
+              href="https://aditya-pimpale-resume.tiiny.site"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-xl shadow-2xl hover:shadow-primary/50 transition-all duration-300 text-lg"
+            >
+              <FaDownload />
+              Download My Resume
+            </motion.a>
           </motion.div>
 
-          {/* Contact Form */}
+          {/* Right: Form */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="order-1 lg:order-2"
           >
+            {/* Success/Error Messages */}
             {submitStatus === 'success' && (
               <motion.div 
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mb-4 md:mb-6 p-3 md:p-4 bg-green-500/20 border border-green-500 rounded-lg text-green-300 text-sm md:text-base"
+                className="mb-6 p-5 bg-green-500/20 border border-green-500/50 rounded-2xl text-green-300 text-center font-medium"
               >
-                Thank you for your message! I'll get back to you soon.
+                Message sent successfully! I'll reply within 24 hours.
               </motion.div>
             )}
             
             {submitStatus === 'error' && (
               <motion.div 
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mb-4 md:mb-6 p-3 md:p-4 bg-red-500/20 border border-red-500 rounded-lg text-red-300 text-sm md:text-base"
+                className="mb-6 p-5 bg-red-500/20 border border-red-500/50 rounded-2xl text-red-300 text-center font-medium"
               >
-                Sorry, there was an error sending your message. Please try again or email me directly.
+                Failed to send. Please email me directly at adityaa12144@gmail.com
               </motion.div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
-              <div>
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <input
                   type="text"
                   name="name"
-                  placeholder="Your Name"
+                  placeholder="Your Name *"
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-3 py-2 md:px-4 md:py-3 bg-dark/50 border border-primary/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 text-sm md:text-base"
+                  className="w-full px-5 py-4 bg-dark/70 border border-primary/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/50 transition-all duration-300"
                 />
-              </div>
-
-              <div>
                 <input
                   type="email"
                   name="email"
-                  placeholder="Your Email"
+                  placeholder="Your Email *"
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-3 py-2 md:px-4 md:py-3 bg-dark/50 border border-primary/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 text-sm md:text-base"
+                  className="w-full px-5 py-4 bg-dark/70 border border-primary/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/50 transition-all duration-300"
                 />
               </div>
 
-              <div>
-                <textarea
-                  name="message"
-                  placeholder="Your Message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows="5"
-                  required
-                  className="w-full px-3 py-2 md:px-4 md:py-3 bg-dark/50 border border-primary/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 resize-none text-sm md:text-base"
-                ></textarea>
-              </div>
+              {/* NEW SUBJECT FIELD */}
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subject (e.g. Website Development, App Idea, Collaboration)"
+                value={formData.subject}
+                onChange={handleChange}
+                className="w-full px-5 py-4 bg-dark/70 border border-primary/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/50 transition-all duration-300"
+              />
+
+              <textarea
+                name="message"
+                placeholder="Your Message *"
+                value={formData.message}
+                onChange={handleChange}
+                rows="6"
+                required
+                className="w-full px-5 py-4 bg-dark/70 border border-primary/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/50 transition-all duration-300 resize-none"
+              ></textarea>
 
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full py-3 md:py-4 bg-gradient-to-r from-primary to-accent text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-sm md:text-base"
+                className="w-full py-5 bg-gradient-to-r from-primary via-accent to-primary text-white font-bold text-lg rounded-xl shadow-2xl hover:shadow-primary/60 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-3"
               >
                 {isSubmitting ? (
-                  <span className="flex items-center justify-center">
-                    <svg className="animate-spin -ml-1 mr-2 md:mr-3 h-4 w-4 md:h-5 md:w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <>
+                    <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
                     Sending...
-                  </span>
+                  </>
                 ) : (
-                  'Send Message'
+                  <>
+                    <FaPaperPlane />
+                    Send Message
+                  </>
                 )}
               </motion.button>
             </form>
 
-            {/* Alternative Contact Info */}
-            <div className="mt-6 p-4 bg-dark/30 rounded-lg border border-primary/10">
-              <p className="text-sm text-gray-400 text-center">
-                Having trouble with the form? Email me directly at{' '}
-                <a 
-                  href="mailto:adityaa12144@gmail.com" 
-                  className="text-primary hover:text-accent transition-colors"
-                >
-                  adityaa12144@gmail.com
-                </a>
-              </p>
-            </div>
+            <p className="text-center text-gray-500 text-sm mt-6">
+              Or email me directly:{' '}
+              <a href="mailto:adityaa12144@gmail.com" className="text-primary font-medium hover:underline">
+                adityaa12144@gmail.com
+              </a>
+            </p>
           </motion.div>
         </div>
       </div>
