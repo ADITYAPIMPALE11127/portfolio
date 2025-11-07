@@ -32,8 +32,9 @@ const navItems = [
   { name: 'Linktree', href: 'https://linktr.ee/AdityaPimpale411', external: true, className: 'gradient-text-2' },
   { name: 'About', href: '#about' },
   { name: 'Projects', href: '#projects' },
+  { name: 'Freelance', href: '#freelance' },
   { name: 'Services', href: '#services' },
-  { name: 'Resume', href: 'https://aditya-pimpale-resume.tiiny.site', external: true, className: 'gradient-text' }, // ✅ Added Resume link
+  { name: 'Resume', href: 'https://aditya-pimpale-resume.tiiny.site', external: true, className: 'gradient-text' },
   { name: 'Feedback', href: '#contact' },
 ];
 
