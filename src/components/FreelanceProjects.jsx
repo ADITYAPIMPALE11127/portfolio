@@ -1,6 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaCalendarAlt, FaCheckCircle, FaBriefcase, FaArrowRight } from 'react-icons/fa';
+import { 
+  FaCalendarAlt, 
+  FaCheckCircle, 
+  FaBriefcase, 
+  FaArrowRight, 
+  FaExternalLinkAlt 
+} from 'react-icons/fa';
 
 const FreelanceProjects = () => {
   const projects = [
@@ -12,6 +18,7 @@ const FreelanceProjects = () => {
       description: 'Built a dynamic product catalog platform with search and filtering features using React.',
       impact: 'Improved system accessibility and reduced manual catalog management by 70%, doubling client usage.',
       status: 'In Progress',
+      liveUrl: 'https://bhagyashree-sales.vercel.app',
       skills: ['React', 'Search', 'Filtering', 'UI/UX'],
       metrics: ['70% efficiency gain', '2x user growth']
     },
@@ -23,6 +30,7 @@ const FreelanceProjects = () => {
       description: 'Developed a UI for client data form filling and integrated payment gateway.',
       impact: 'Streamlined user experience and enabled seamless payment processing for horoscope services.',
       status: 'Completed',
+      liveUrl: 'https://arunshashtri.com',
       skills: ['UI Design', 'Payment Integration', 'Form Handling', 'Web Development'],
       metrics: ['Seamless payment flow', 'Enhanced UX']
     }
@@ -56,6 +64,7 @@ const FreelanceProjects = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
           className="text-center mb-12 md:mb-16"
         >
           <div className="flex items-center justify-center gap-3 mb-4">
@@ -74,24 +83,25 @@ const FreelanceProjects = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
+          viewport={{ once: true }}
           className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8"
         >
           {projects.map((project) => (
             <motion.div
               key={project.id}
               variants={itemVariants}
-              whileHover={{ y: -5 }}
+              whileHover={{ y: -8 }}
               className="group relative"
             >
-              {/* Background gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              {/* Background glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               {/* Card */}
-              <div className="relative bg-dark/60 backdrop-blur-md border border-primary/20 rounded-2xl p-6 md:p-8 hover:border-primary/40 transition-all duration-300 shadow-lg">
+              <div className="relative bg-dark/70 backdrop-blur-xl border border-primary/30 rounded-2xl p-6 md:p-8 hover:border-primary/60 transition-all duration-300 shadow-2xl">
                 {/* Header */}
                 <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <div className="flex items-center gap-2 mb-2">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-3">
                       <span className="text-xs md:text-sm font-semibold px-3 py-1 bg-primary/20 text-primary rounded-full">
                         {project.type}
                       </span>
@@ -117,16 +127,16 @@ const FreelanceProjects = () => {
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-300 mb-4 leading-relaxed text-sm md:text-base">
+                <p className="text-gray-300 mb-5 leading-relaxed text-sm md:text-base">
                   {project.description}
                 </p>
 
                 {/* Impact */}
-                <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 mb-6">
+                <div className="bg-primary/10 border border-primary/30 rounded-xl p-4 mb-6">
                   <div className="flex items-start gap-3">
-                    <FaCheckCircle className="text-green-400 mt-1 flex-shrink-0" />
+                    <FaCheckCircle className="text-green-400 mt-1 flex-shrink-0 text-lg" />
                     <p className="text-gray-200 text-sm md:text-base leading-relaxed">
-                      {project.impact}
+                      <strong>Impact:</strong> {project.impact}
                     </p>
                   </div>
                 </div>
@@ -136,24 +146,37 @@ const FreelanceProjects = () => {
                   {project.metrics.map((metric, idx) => (
                     <div
                       key={idx}
-                      className="bg-accent/10 border border-accent/30 rounded-lg p-3 text-center"
+                      className="bg-gradient-to-r from-accent/20 to-primary/20 border border-accent/40 rounded-lg p-3 text-center backdrop-blur-sm"
                     >
-                      <p className="text-accent font-semibold text-sm md:text-base">{metric}</p>
+                      <p className="text-accent font-bold text-sm md:text-base">{metric}</p>
                     </div>
                   ))}
                 </div>
 
                 {/* Skills */}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {project.skills.map((skill, idx) => (
                     <span
                       key={idx}
-                      className="text-xs md:text-sm px-3 py-1 bg-secondary/20 text-secondary rounded-full hover:bg-secondary/30 transition-colors duration-300"
+                      className="text-xs md:text-sm px-3 py-1.5 bg-secondary/20 text-secondary border border-secondary/30 rounded-full hover:bg-secondary/40 transition-all duration-300"
                     >
                       {skill}
                     </span>
                   ))}
                 </div>
+
+                {/* Live Project Button */}
+                <motion.a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-primary to-accent text-white font-semibold rounded-full shadow-lg hover:shadow-primary/50 transition-all duration-300 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500"
+                >
+                  <FaExternalLinkAlt className="text-sm" />
+                  View Live Project
+                </motion.a>
               </div>
             </motion.div>
           ))}
@@ -164,20 +187,27 @@ const FreelanceProjects = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mt-12 md:mt-16"
+          viewport={{ once: true }}
+          className="text-center mt-16 md:mt-20"
         >
-          <p className="text-gray-400 mb-6 text-sm md:text-base">
-            Looking for a skilled freelancer? Let's discuss your project!
+          <p className="text-gray-300 mb-8 text-lg md:text-xl font-medium">
+            Ready to bring your idea to life? Let's build something amazing together.
           </p>
           <motion.a
             href="#contact"
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-3 px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-primary to-accent text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+            className="inline-flex items-center gap-4 px-8 md:px-10 py-4 md:py-5 bg-gradient-to-r from-primary via-accent to-primary text-white font-bold text-lg rounded-full shadow-2xl hover:shadow-primary/60 transition-all duration-300 group"
           >
-            Start a Project
-            <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+            <span>Start Your Project Now</span>
+            <FaArrowRight className="group-hover:translate-x-2 transition-transform duration-300" />
           </motion.a>
+          
+          <p className="text-gray-500 text-sm mt-6">
+            Check out live demos: 
+            <a href="https://bhagyashree-sales.vercel.app" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline ml-1">bhagyashree-sales.vercel.app</a> | 
+            <a href="https://arunshashtri.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline ml-1">arunshashtri.com</a>
+          </p>
         </motion.div>
       </div>
     </section>
