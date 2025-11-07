@@ -23,11 +23,11 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
-    
+
     try {
-      const serviceID = 'YOUR_SERVICE_ID';
-      const templateID = 'YOUR_TEMPLATE_ID';
-      const publicKey = 'YOUR_PUBLIC_KEY';
+      const serviceID = 'service_xxxxxxx';
+      const templateID = 'template_xxxxxxx';
+      const publicKey = 'YOUR_PUBLIC_KEY_HERE';
 
       const templateParams = {
         from_name: formData.name,
@@ -38,18 +38,18 @@ const Contact = () => {
       };
 
       await emailjs.send(serviceID, templateID, templateParams, publicKey);
-      
+
       setSubmitStatus('success');
       setFormData({ name: '', email: '', message: '' });
-      
+
       setTimeout(() => {
         setSubmitStatus(null);
       }, 5000);
-      
+
     } catch (error) {
       console.error('Error sending email:', error);
       setSubmitStatus('error');
-      
+
       setTimeout(() => {
         setSubmitStatus(null);
       }, 5000);
