@@ -28,7 +28,6 @@ const Navbar = () => {
 
 const navItems = [
   { name: 'Home', href: '#home' },
-  { name: 'Dev Shop', href: 'https://dev-e-commerce.vercel.app/', external: true, className: 'gradient-text' },
   { name: 'Linktree', href: 'https://linktr.ee/AdityaPimpale411', external: true, className: 'gradient-text-2' },
   { name: 'About', href: '#about' },
   { name: 'Projects', href: '#projects' },
