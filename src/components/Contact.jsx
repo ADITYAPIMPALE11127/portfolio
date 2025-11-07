@@ -127,8 +127,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Phone</p>
-                    <a href="tel:+919607566258" className="text-white font-medium hover:text-accent transition-colors">
-                      +91 96075 66258
+                    <a href="tel:+918329091740" className="text-white font-medium hover:text-accent transition-colors">
+                      +91 8329091740
                     </a>
                   </div>
                 </motion.div>
