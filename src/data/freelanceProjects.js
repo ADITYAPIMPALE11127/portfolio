@@ -1,3 +1,13 @@
+import P1 from '../../images/P1.jpg';
+import P2 from '../../images/P2.jpg';
+import P3 from '../../images/P3.jpg';
+import P4 from '../../images/P4.jpg';
+import P5 from '../../images/P5.jpg';
+import P6 from '../../images/P6.webp';
+import P7 from '../../images/P7.png';
+import P8 from '../../images/P8.png';
+import P9 from '../../images/P9.png';
+import P10 from '../../images/P10.jpeg';
 export const freelanceProjects = [
   {
     id: 1,
@@ -11,7 +21,7 @@ export const freelanceProjects = [
     liveUrl: 'https://bhagyashree-sales.vercel.app',
     skills: ['React', 'Search', 'Filtering', 'UI/UX'],
     metrics: ['70% efficiency gain', '2x user growth'],
-    image: `/images/S1.png`
+    image: P5
   },
   {
     id: 2,
@@ -25,7 +35,7 @@ export const freelanceProjects = [
     liveUrl: 'https://arunshashtri.com',
     skills: ['UI Design', 'Payment Integration', 'Form Handling', 'Web Development'],
     metrics: ['Seamless payment flow', 'Enhanced UX'],
-    image: `/images/S2.png`
+    image: P4
   },
   {
     id: 3,
@@ -39,6 +49,6 @@ export const freelanceProjects = [
     liveUrl: 'https://jrtransport.in/',
     skills: ['React', 'Web Development', 'Form Integration', 'Hosting & Deployment'],
     metrics: ['Professional company site', 'Live enquiry desk'],
-    image: `/images/S3.png`
+    image: P3
   }
 ];
