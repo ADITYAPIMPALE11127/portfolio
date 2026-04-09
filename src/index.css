@@ -158,3 +158,62 @@ body {
     font-size: 1.25rem;
   }
 }
+
+/* Bootstrap Card Styles */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);
+}
+
+/* Gradient Button */
+.btn-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3);
+  color: white;
+}
+
+/* Modal Styles */
+.project-modal .modal-content {
+  background-color: #1a1a1a;
+  border: 1px solid rgba(0, 123, 255, 0.3);
+  border-radius: 1rem;
+}
+
+.project-modal .modal-header {
+  border-bottom-color: rgba(0, 123, 255, 0.3);
+}
+
+.project-modal .modal-footer {
+  border-top-color: rgba(0, 123, 255, 0.3);
+}
+
+/* Custom Scrollbar for Modal Body */
+.modal-body {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: #2d2d2d;
+  border-radius: 4px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}

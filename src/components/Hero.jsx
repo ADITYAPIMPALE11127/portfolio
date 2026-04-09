@@ -42,8 +42,7 @@ const Hero = () => {
               transition={{ delay: 0.5, duration: 0.8 }}
               className="text-lg sm:text-xl md:text-2xl mb-8 leading-relaxed text-gray-300 max-w-3xl mx-auto"
             >
-              A passionate computer engineering graduate with a flair for
-              <span className="block sm:inline"> creating innovative web & software solutions that drive real results.</span>
+Freelance Computer Engineer specializing in cutting-edge web & software solutions. <span className="block sm:inline">Available now for your next tech project!</span>
             </motion.p>
 
             <motion.div
@@ -53,7 +52,7 @@ const Hero = () => {
               className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 mt-10"
             >
               <div className="text-secondary text-lg sm:text-xl font-semibold tracking-wider">
-                | Web Development Enthusiast |
+| Freelance Tech Specialist | Available for Hire |
               </div>
               
               {/* HIRE ME BUTTON - NOW SCROLLS TO CONTACT FORM */}

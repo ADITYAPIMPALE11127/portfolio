@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaJava, FaJs, FaReact, FaPython, FaGit, FaGithub, FaFileAlt, FaGlobe } from 'react-icons/fa';
+import { FaJs, FaReact, FaPython, FaGit, FaGithub, FaDatabase, FaServer, FaCodeBranch } from 'react-icons/fa';
 
 const About = () => {
   const [activeTab, setActiveTab] = useState('skills');
@@ -9,31 +9,36 @@ const About = () => {
     {
       category: 'Languages',
       items: [
-        { name: 'Core Java (Basic)', icon: FaJava, color: '#f89820' },
-        { name: 'JavaScript (Basic)', icon: FaJs, color: '#f7e02a' },
+        { name: 'Python', icon: FaPython, color: '#306998' },
+        { name: 'JavaScript', icon: FaJs, color: '#f7e02a' },
       ]
     },
     {
-      category: 'Frameworks & Libraries',
+      category: 'Frontend',
       items: [
         { name: 'React', icon: FaReact, color: '#61DBFB' },
-        { name: 'React Native', icon: FaReact, color: '#61DBFB' },
-        { name: 'Flask', icon: FaPython, color: '#306998' },
-        { name: 'Axios', icon: FaGlobe, color: '#50d3bb' },
-        { name: 'React Native Paper', icon: FaReact, color: '#61DBFB' },
       ]
     },
     {
-      category: 'Miscellaneous',
+      category: 'Backend & Database',
+      items: [
+        { name: 'Django Framework', icon: FaServer, color: '#092e20' },
+        { name: 'MongoDB', icon: FaDatabase, color: '#47A248' },
+        { name: 'API Integration', icon: FaServer, color: '#00D4AA' },
+      ]
+    },
+    {
+      category: 'Version Control',
       items: [
         { name: 'Git', icon: FaGit, color: '#F1502F' },
         { name: 'GitHub', icon: FaGithub, color: '#31ef14' },
-        { name: 'MS Office', icon: FaFileAlt, color: '#fd5353' },
+        { name: 'Version Control', icon: FaCodeBranch, color: '#f7df1e' },
       ]
     }
   ];
 
   const experience = [
+    { role: 'Full Stack Developer (Part Time)', company: 'Colab Hub', description: 'Developing Community web application using MERN Stack for a startup', period: 'Present' },
     { role: 'Frontend Developer Intern', company: 'Anveshak Technologies', period: 'August 2024' },
     { role: 'React Native Developer', company: 'BlueCollarLog', period: 'Feb 2024 - May 2024' },
     { role: 'Big Data Intern', company: 'Cyber Secured India', period: 'Feb 2023 - Mar 2023' },
@@ -43,6 +48,7 @@ const About = () => {
   ];
 
   const education = [
+    { degree: 'Credit Linked Program in AIML', institution: 'Daksh Gurukul IIT Guwahati, IIT Guwahati', period: 'April 2025 – Present' },
     { degree: 'COMPUTER ENGINEERING', institution: 'Savitribai Phule Pune University' },
     { degree: '12th SCIENCE (HSC)', institution: 'S.B.Patil College of Science and Commerce, Ravet' },
     { degree: '10th GRADE (SSC)', institution: 'St. Ursula High School, Akurdi-35' },
@@ -70,12 +76,7 @@ const About = () => {
             </h2>
             
             <p className="text-base sm:text-lg leading-relaxed mb-6 md:mb-8 text-gray-300 text-center max-w-4xl mx-auto px-2">
-              I am a Computer Engineering graduate from Savitribai Phule Pune University (SPPU), 
-              driven by a deep passion for technology and innovation. Throughout my academic journey, 
-              I explored various aspects of programming, web development, and software engineering. 
-              I actively seek opportunities for growth, taking on internships and real-world projects 
-              in Big Data, web development, and technical writing. My relentless drive and technical 
-              expertise equip me to make a significant impact in the field of computer engineering.
+Freelance Computer Engineering graduate from Savitribai Phule Pune University (SPPU), passionate about technology & innovation. Actively delivering freelance tech projects while seeking full-time job opportunities in software/web development to drive real impact!
             </p>
 
             {/* Tabs - Now scrollable on mobile */}
@@ -142,6 +143,7 @@ const About = () => {
                     >
                       <h4 className="font-semibold text-white text-sm sm:text-base">{exp.role}</h4>
                       <p className="text-primary text-xs sm:text-sm">{exp.company}</p>
+                      {exp.description && <p className="text-gray-400 text-xs mt-1">{exp.description}</p>}
                       <p className="text-secondary text-xs">{exp.period}</p>
                     </motion.div>
                   ))}
@@ -159,7 +161,8 @@ const About = () => {
                       className="p-3 sm:p-4 bg-black/30 rounded-lg hover:bg-black/50 transition-colors duration-300"
                     >
                       <h4 className="font-semibold text-white text-sm sm:text-base">{edu.degree}</h4>
-                      <p className="text-gray-300 text-xs sm:text-sm">{edu.institution}</p>
+                      <p className="text-primary text-xs sm:text-sm">{edu.institution}</p>
+                      {edu.period && <p className="text-secondary text-xs">{edu.period}</p>}
                     </motion.div>
                   ))}
                 </div>

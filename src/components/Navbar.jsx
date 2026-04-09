@@ -26,25 +26,25 @@ const Navbar = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isMobileMenuOpen]);
 
-const navItems = [
-  { name: 'Home', href: '#home' },
-  { name: 'Linktree', href: 'https://linktr.ee/AdityaPimpale411', external: true, className: 'gradient-text-2' },
-  { name: 'About', href: '#about' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Freelance', href: '#freelance' },
-  { name: 'Services', href: '#services' },
-  { name: 'Resume', href: 'https://aditya-pimpale-resume.tiiny.site', external: true, className: 'gradient-text' },
-  { name: 'Feedback', href: '#contact' },
-];
+  const navItems = [
+    { name: 'Home', href: '#home' },
+    { name: 'Freelance Work', href: '#freelance' },
+    { name: 'Pricing', href: '#pricing' },
+    { name: 'Linktree', href: 'https://linktr.ee/AdityaPimpale411', external: true, className: 'gradient-text-2' },
+    { name: 'About', href: '#about' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Services', href: '#services' },
+    { name: 'Resume', href: 'https://aditya-pimpale-resume.tiiny.site', external: true, className: 'gradient-text' },
+    { name: 'Feedback', href: '#contact' },
+  ];
 
 
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-dark/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-dark/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+        }`}
     >
       <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
