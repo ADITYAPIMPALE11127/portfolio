@@ -98,7 +98,7 @@ const FreelanceProjects = () => {
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      style={{background:'red'}}
+
                       className="flex items-center gap-2 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors duration-300 text-sm font-medium"
                     >
                       <FaExternalLinkAlt />
