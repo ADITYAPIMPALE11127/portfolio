@@ -36,7 +36,7 @@ const FreelanceProjects = () => {
               {/* Project Image */}
               <div className="relative overflow-hidden h-48">
                 <img 
-                  src={`/images/S${project.id}.png`} 
+                  src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />

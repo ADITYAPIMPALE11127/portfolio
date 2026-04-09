@@ -10,7 +10,8 @@ export const freelanceProjects = [
     status: 'Completed',
     liveUrl: 'https://bhagyashree-sales.vercel.app',
     skills: ['React', 'Search', 'Filtering', 'UI/UX'],
-    metrics: ['70% efficiency gain', '2x user growth']
+    metrics: ['70% efficiency gain', '2x user growth'],
+    image: `/images/S1.png`
   },
   {
     id: 2,
@@ -23,7 +24,8 @@ export const freelanceProjects = [
     status: 'Completed',
     liveUrl: 'https://arunshashtri.com',
     skills: ['UI Design', 'Payment Integration', 'Form Handling', 'Web Development'],
-    metrics: ['Seamless payment flow', 'Enhanced UX']
+    metrics: ['Seamless payment flow', 'Enhanced UX'],
+    image: `/images/S2.png`
   },
   {
     id: 3,
@@ -36,6 +38,7 @@ export const freelanceProjects = [
     status: 'Completed',
     liveUrl: 'https://jrtransport.in/',
     skills: ['React', 'Web Development', 'Form Integration', 'Hosting & Deployment'],
-    metrics: ['Professional company site', 'Live enquiry desk']
+    metrics: ['Professional company site', 'Live enquiry desk'],
+    image: `/images/S3.png`
   }
 ];
