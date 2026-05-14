@@ -125,7 +125,10 @@ const Contact = () => {
                   <div className="p-3 bg-accent/10 rounded-xl">
                     <FaPhone className="text-2xl text-accent" />
                   </div>
-             
+                  <div>
+                    <p className="text-gray-400 text-sm">Contact</p>
+                    <p className="text-white font-medium">Available on social media</p>
+                  </div>
                 </motion.div>
               </div>
             </div>
@@ -142,7 +145,7 @@ const Contact = () => {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.2, y: -8 }}
                     whileTap={{ scale: 0.9 }}
-                    className="w-12 h-12 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl flex items-center justify-center text-2xl backdrop-blur-md border border-white/10 hover:border-primary/50 transition-all duration-300"
+                    className="w-12 h-12 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl flex items-center justify-center text-2xl backdrop-blur-md border border-white/10 hover:border-prim[...]"
                     style={{ color: social.color }}
                   >
                     <social.icon />
@@ -158,7 +161,7 @@ const Contact = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-xl shadow-2xl hover:shadow-primary/50 transition-all duration-300 text-lg"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-xl shadow-2xl hover:shadow-primary/50 transition-all duratio[...]"
             >
               <FaDownload />
               Download My Resume
@@ -203,7 +206,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-5 py-4 bg-dark/70 border border-primary/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/50 transition-all duration-300"
+                  className="w-full px-5 py-4 bg-dark/70 border border-primary/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primar[...]"
                 />
                 <input
                   type="email"
@@ -212,7 +215,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-5 py-4 bg-dark/70 border border-primary/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/50 transition-all duration-300"
+                  className="w-full px-5 py-4 bg-dark/70 border border-primary/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primar[...]"
                 />
               </div>
 
@@ -223,7 +226,7 @@ const Contact = () => {
                 placeholder="Subject (e.g. Website Development, App Idea, Collaboration)"
                 value={formData.subject}
                 onChange={handleChange}
-                className="w-full px-5 py-4 bg-dark/70 border border-primary/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/50 transition-all duration-300"
+                className="w-full px-5 py-4 bg-dark/70 border border-primary/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/[...]"
               />
 
               <textarea
@@ -233,7 +236,7 @@ const Contact = () => {
                 onChange={handleChange}
                 rows="6"
                 required
-                className="w-full px-5 py-4 bg-dark/70 border border-primary/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/50 transition-all duration-300 resize-none"
+                className="w-full px-5 py-4 bg-dark/70 border border-primary/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/[...]"
               ></textarea>
 
               <motion.button
@@ -241,7 +244,7 @@ const Contact = () => {
                 disabled={isSubmitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full py-5 bg-gradient-to-r from-primary via-accent to-primary text-white font-bold text-lg rounded-xl shadow-2xl hover:shadow-primary/60 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                className="w-full py-5 bg-gradient-to-r from-primary via-accent to-primary text-white font-bold text-lg rounded-xl shadow-2xl hover:shadow-primary/60 transition-all duration-300 d[...]"
               >
                 {isSubmitting ? (
                   <>
