@@ -125,12 +125,7 @@ const Contact = () => {
                   <div className="p-3 bg-accent/10 rounded-xl">
                     <FaPhone className="text-2xl text-accent" />
                   </div>
-                  <div>
-                    <p className="text-gray-400 text-sm">Phone</p>
-                    <a href="tel:+918329091740" className="text-white font-medium hover:text-accent transition-colors">
-                      +91 8329091740
-                    </a>
-                  </div>
+             
                 </motion.div>
               </div>
             </div>
