@@ -32,7 +32,7 @@ export const freelanceProjects = [
     shortDesc: 'Horoscope app with seamless payment integration.',
     impact: 'Streamlined user experience and enabled seamless payment processing for horoscope services.',
     status: 'Completed',
-    liveUrl: 'https://arunshashtri.com',
+    liveUrl: 'https://arunshastri-v1.onrender.com/',
     skills: ['UI Design', 'Payment Integration', 'Form Handling', 'Web Development'],
     metrics: ['Seamless payment flow', 'Enhanced UX'],
     image: P4
